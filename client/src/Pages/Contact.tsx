@@ -353,8 +353,8 @@ export default function Contacts() {
       
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <h2 className="m-0 text-2xl font-semibold text-black">Contacts</h2>
-          <h4 className="m-0 text-sm text-slate-700">
+          <h2 className="m-0 text-2xl font-semibold card-heading">Contacts</h2>
+          <h4 className="m-0 text-sm card-muted">
             Store, search, and manage your network in one neat place
           </h4>
         </div>
@@ -410,7 +410,7 @@ export default function Contacts() {
                       {getInitials(c.name)}
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-slate-900">{c.name}</div>
+                      <div className="text-sm font-bold card-heading">{c.name}</div>
                       <div className="text-sm text-slate-600">{c.company}</div>
                     </div>
                   </div>
@@ -418,7 +418,7 @@ export default function Contacts() {
                     <button
                       onClick={() => openEdit(c)}
                       title="Edit"
-                      className="rounded-lg p-1.5 hover:bg-slate-100"
+                      className="rounded-lg p-1.5 action-icon"
                     >
                       <img src="/edit.png" className="h-5 w-5" />
                     </button>

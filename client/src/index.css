@@ -29,6 +29,8 @@
 .badge-indigo { background-color: #eef2ff; color: #4f46e5; }
 .notif-button { background: #ffffff; color: #0f172a; border-color: transparent; }
 .notif-button:hover { border-color: #6b7280; }
+.action-icon { background-color: transparent; }
+.action-icon:hover { background-color: #f1f5f9; }
 
 /* Contacts page extras */
 .toolbar-surface { background-color: rgba(203,213,225,0.6); }
@@ -65,8 +67,10 @@ html.theme-dark td { border-top-color: #334155; }
 html.theme-dark .welcome-gradient { background-image: linear-gradient(to right, #1f2937, #0f172a); border-color: #334155; }
 html.theme-dark .welcome-avatar { border-color: #475569; }
 html.theme-dark .page-surface { background-color: #0b1220; }
-html.theme-dark .notif-button { background: #1f2937; color: #e2e8f0; border-color: #334155; }
-html.theme-dark .notif-button:hover { border-color: #64748b; }
+html.theme-dark .notif-button { background: #ffffff !important; color: #0f172a !important; border-color: #94a3b8 !important; }
+html.theme-dark .notif-button:hover { border-color: #64748b !important; }
+html.theme-dark .action-icon { background-color: #ffffff !important; border: 1px solid #94a3b8 !important; color: #0f172a !important; }
+html.theme-dark .action-icon:hover { background-color: #f8fafc !important; }
 
 ::-webkit-scrollbar {
   display: none;
