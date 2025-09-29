@@ -29,6 +29,10 @@
 .badge-indigo { background-color: #eef2ff; color: #4f46e5; }
 .notif-button { background: #ffffff; color: #0f172a; border-color: transparent; }
 .notif-button:hover { border-color: #6b7280; }
+.profile-button { background: transparent; border: 1px solid transparent; }
+.profile-button:hover { border-color: #cbd5e1; }
+.profile-button-text { color: #64748b; }
+.profile-button-icon { color: #0f172a; }
 .action-icon { background-color: transparent; }
 .action-icon:hover { background-color: #f1f5f9; }
 
@@ -71,6 +75,13 @@ html.theme-dark .notif-button { background: #ffffff !important; color: #0f172a !
 html.theme-dark .notif-button:hover { border-color: #64748b !important; }
 html.theme-dark .action-icon { background-color: #ffffff !important; border: 1px solid #94a3b8 !important; color: #0f172a !important; }
 html.theme-dark .action-icon:hover { background-color: #f8fafc !important; }
+html.theme-dark .profile-button { background: #ffffff; border-color: #94a3b8; }
+html.theme-dark .profile-button:hover { border-color: #64748b; }
+html.theme-dark .profile-button-text { color: #0f172a; }
+html.theme-dark .profile-button-icon { color: #0f172a; }
+html.theme-dark .profile-menu { background: #1f2937; border-color: #334155; }
+html.theme-dark .profile-menu-item { color: #e2e8f0; }
+html.theme-dark .profile-menu-item:hover { background: #334155; }
 
 ::-webkit-scrollbar {
   display: none;
