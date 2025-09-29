@@ -30,7 +30,7 @@ export default function NavBar({user}:any) {
   }
   return (
     <>
-      <div className="grid grid-cols-[auto_1fr_auto] items-center w-full h-14 bg-[#F4F9F9] mb-2 mt-[-0.5rem] rounded-lg px-3 sticky  z-50 shadow-md">
+      <div className="grid grid-cols-[auto_1fr_auto] items-center w-full h-14 bg-white dark:bg-gray-900 mb-2 mt-[-0.5rem] rounded-lg px-3 sticky z-50 shadow-md">
         <Breadcrumb />
 
         <div className="flex items-center gap-2 justify-end">

@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer base {
+  body {
+    @apply bg-white text-slate-900 dark:bg-gray-900 dark:text-slate-100;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

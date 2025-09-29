@@ -45,9 +45,9 @@ function CustomTooltip({
 }) {
   if (active && payload && payload.length) {
     return (
-      <div className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm shadow">
-        <div className="font-medium text-gray-800">{label}</div>
-        <div className="text-gray-600">
+      <div className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm shadow dark:bg-slate-900 dark:border-slate-700">
+        <div className="font-medium text-gray-800 dark:text-slate-100">{label}</div>
+        <div className="text-gray-600 dark:text-slate-300">
           Contacts: <span className="font-semibold">{payload[0].value}</span>
         </div>
       </div>
@@ -64,29 +64,29 @@ export default function ContactBarChart() {
 
   return (
     <div className="w-full mt-4 ml-6">
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-all duration-200">
+      <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-all duration-200 dark:bg-slate-800 dark:border-slate-700">
         
         <div className="mb-5 flex items-start justify-between gap-3">
           <div>
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-slate-100">
               Contacts Added Per Month
             </h2>
-            <p className="mt-1 text-xs text-gray-500">Jan – Dec overview</p>
+            <p className="mt-1 text-xs text-gray-500 dark:text-slate-400">Jan – Dec overview</p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="rounded-lg bg-gray-50 px-3 py-2 text-right">
-              <div className="text-[10px] uppercase tracking-wide text-gray-500">
+            <div className="rounded-lg bg-gray-50 px-3 py-2 text-right dark:bg-slate-700">
+              <div className="text-[10px] uppercase tracking-wide text-gray-500 dark:text-slate-400">
                 Total
               </div>
-              <div className="text-sm font-semibold text-gray-700">
+              <div className="text-sm font-semibold text-gray-700 dark:text-slate-200">
                 {formatNumber(total)}
               </div>
             </div>
-            <div className="rounded-lg bg-indigo-50 px-3 py-2 text-right">
-              <div className="text-[10px] uppercase tracking-wide text-indigo-600">
+            <div className="rounded-lg bg-indigo-50 px-3 py-2 text-right dark:bg-indigo-950">
+              <div className="text-[10px] uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
                 Best Month
               </div>
-              <div className="text-sm font-semibold text-indigo-700">
+              <div className="text-sm font-semibold text-indigo-700 dark:text-indigo-300">
                 {best.month} • {best.contacts}
               </div>
             </div>
@@ -109,18 +109,20 @@ export default function ContactBarChart() {
               data={data}
               margin={{ top: 10, right: 12, left: 4, bottom: 6 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" className="dark:stroke-slate-700" />
               <XAxis
                 dataKey="month"
                 tickLine={false}
                 axisLine={false}
                 tick={{ fill: "#6b7280", fontSize: 12 }}
+                className="dark:fill-slate-400"
               />
               <YAxis
                 tickLine={false}
                 axisLine={false}
                 tick={{ fill: "#6b7280", fontSize: 12 }}
                 width={30}
+                className="dark:fill-slate-400"
               />
               <Tooltip content={<CustomTooltip />} />
               <Bar
