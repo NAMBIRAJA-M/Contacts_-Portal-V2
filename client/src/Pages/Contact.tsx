@@ -56,7 +56,7 @@ const validateForm = (form: FormState): FormErrors => {
 function ViewToggle({ value, onChange }: { value: ViewMode; onChange: (v: ViewMode) => void }) {
   const isCards = value === "cards";
   return (
-    <div className="relative w-64 rounded-full bg-slate-200 p-1 dark:bg-slate-700">
+    <div className="relative w-64 rounded-full bg-slate-200 p-1">
       <div
         className={`absolute top-1 bottom-1 w-1/2 rounded-full bg-[#6E8CFB] transition-transform duration-200 ${
           isCards ? "translate-x-1" : "translate-x-[calc(100%-4px)]"
@@ -65,7 +65,7 @@ function ViewToggle({ value, onChange }: { value: ViewMode; onChange: (v: ViewMo
       <div className="relative z-10 grid grid-cols-2 gap-1">
         <button
           className={`py-2 text-center font-semibold ${
-            isCards ? "text-white" : "text-black dark:text-slate-100"
+            isCards ? "text-white" : "text-black"
           }`}
           onClick={() => onChange("cards")}
         >
@@ -73,7 +73,7 @@ function ViewToggle({ value, onChange }: { value: ViewMode; onChange: (v: ViewMo
         </button>
         <button
           className={`py-2 text-center font-semibold ${
-            !isCards ? "text-white" : "text-black dark:text-slate-100"
+            !isCards ? "text-white" : "text-black"
           }`}
           onClick={() => onChange("table")}
         >
@@ -96,15 +96,15 @@ function ConfirmDeleteModal({
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/40 backdrop-blur-[1px]">
-      <div className="w-[min(520px,92vw)] rounded-xl border border-slate-200 bg-white shadow-2xl dark:bg-slate-900 dark:border-slate-700">
-        <div className="flex items-center justify-between border-b border-slate-200 p-4 dark:border-slate-700">
-          <h3 className="m-0 text-lg font-semibold text-slate-900 dark:text-slate-100">
+      <div className="w-[min(520px,92vw)] rounded-xl border card-surface shadow-2xl">
+        <div className="flex items-center justify-between border-b p-4 card-surface">
+          <h3 className="m-0 text-lg font-semibold card-heading">
             Delete this contact? This cannot be undone.
           </h3>
           <button
             aria-label="Close"
             onClick={onCancel}
-            className="rounded-full p-1 text-2xl leading-none text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="rounded-full p-1 text-2xl leading-none text-slate-600 hover:bg-slate-100"
           >
             ×
           </button>
@@ -112,7 +112,7 @@ function ConfirmDeleteModal({
         <div className="flex justify-end gap-2 p-4">
           <button
             onClick={onCancel}
-            className="rounded-lg border border-slate-300 bg-white px-4 py-2 font-semibold text-slate-900 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+            className="rounded-lg border bg-white px-4 py-2 font-semibold text-slate-900 hover:bg-slate-50"
           >
             Cancel
           </button>
@@ -148,15 +148,15 @@ function ContactFormModal({
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/40 backdrop-blur-[1px]">
-      <div className="w-[min(560px,92vw)] rounded-xl border border-slate-200 bg-white shadow-2xl dark:bg-slate-900 dark:border-slate-700">
-        <div className="flex items-center justify-between border-b border-slate-200 p-4 dark:border-slate-700">
-          <h3 className="m-0 text-lg font-semibold text-slate-900 dark:text-slate-100">
+      <div className="w-[min(560px,92vw)] rounded-xl border card-surface shadow-2xl">
+        <div className="flex items-center justify-between border-b p-4 card-surface">
+          <h3 className="m-0 text-lg font-semibold card-heading">
             {mode === "edit" ? "Edit Contact" : "Add New Contact"}
           </h3>
           <button
             aria-label="Close"
             onClick={onClose}
-            className="rounded-full p-1 text-2xl leading-none text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="rounded-full p-1 text-2xl leading-none text-slate-600 hover:bg-slate-100"
           >
             ×
           </button>
@@ -164,9 +164,9 @@ function ContactFormModal({
         <div className="p-4">
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             <div>
-              <label className="mb-1 block text-xs text-slate-600 dark:text-slate-300">Name</label>
+              <label className="mb-1 block text-xs text-slate-600">Name</label>
               <input
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none"
                 value={form.name}
                 onChange={(e) => onChange("name", e.target.value)}
                 placeholder="Jane Doe"
@@ -174,19 +174,19 @@ function ContactFormModal({
               {errors.name && <div className="mt-1 text-xs text-red-600">{errors.name}</div>}
             </div>
             <div>
-              <label className="mb-1 block text-xs text-slate-600 dark:text-slate-300">Company</label>
+              <label className="mb-1 block text-xs text-slate-600">Company</label>
               <input
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none"
                 value={form.company}
                 onChange={(e) => onChange("company", e.target.value)}
                 placeholder="Acme Inc."
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-slate-600 dark:text-slate-300">Email</label>
+              <label className="mb-1 block text-xs text-slate-600">Email</label>
               <input
                 type="email"
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none"
                 value={form.email}
                 onChange={(e) => onChange("email", e.target.value)}
                 placeholder="jane@example.com"
@@ -194,9 +194,9 @@ function ContactFormModal({
               {errors.email && <div className="mt-1 text-xs text-red-600">{errors.email}</div>}
             </div>
             <div>
-              <label className="mb-1 block text-xs text-slate-600 dark:text-slate-300">Phone</label>
+              <label className="mb-1 block text-xs text-slate-600">Phone</label>
               <input
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100"
+                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none"
                 value={form.phone}
                 onChange={(e) => onChange("phone", e.target.value)}
                 placeholder="+91 90000 00000"
@@ -204,10 +204,10 @@ function ContactFormModal({
             </div>
           </div>
           <div className="mt-3">
-            <label className="mb-1 block text-xs text-slate-600 dark:text-slate-300">Notes</label>
+            <label className="mb-1 block text-xs text-slate-600">Notes</label>
             <textarea
               rows={3}
-              className="w-full resize-y rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100"
+              className="w-full resize-y rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none"
               value={form.notes}
               onChange={(e) => onChange("notes", e.target.value)}
               placeholder="Optional notes"
@@ -216,7 +216,7 @@ function ContactFormModal({
           <div className="mt-4 flex justify-end gap-2">
             <button
               onClick={onClose}
-              className="rounded-lg border border-slate-300 bg-white px-4 py-2 font-semibold text-slate-900 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+              className="rounded-lg border bg-white px-4 py-2 font-semibold text-slate-900 hover:bg-slate-50"
             >
               Cancel
             </button>
@@ -349,12 +349,12 @@ export default function Contacts() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-4 dark:bg-gray-900">
+    <div className="min-h-screen p-4 page-surface">
       
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <h2 className="m-0 text-2xl font-semibold text-black dark:text-slate-100">Contacts</h2>
-          <h4 className="m-0 text-sm text-slate-700 dark:text-slate-300">
+          <h2 className="m-0 text-2xl font-semibold text-black">Contacts</h2>
+          <h4 className="m-0 text-sm text-slate-700">
             Store, search, and manage your network in one neat place
           </h4>
         </div>
@@ -362,10 +362,10 @@ export default function Contacts() {
       </div>
 
      
-      <div className="sticky top-0 z-10 mb-6 flex w-[98%] items-center justify-between rounded-xl bg-slate-300/60 p-4 backdrop-blur dark:bg-slate-800/60">
+      <div className="sticky top-0 z-10 mb-6 flex w-[98%] items-center justify-between rounded-xl bg-slate-300/60 p-4 backdrop-blur toolbar-surface">
         <input
           ref={searchRef}
-          className="h-10 w-[min(520px,90%)] rounded-lg border border-slate-400 bg-white px-3 text-black outline-none placeholder:text-slate-700 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-100 dark:placeholder:text-slate-400"
+          className="h-10 w-[min(520px,90%)] rounded-lg border border-slate-400 bg-white px-3 text-black outline-none placeholder:text-slate-700 input-surface"
           type="text"
           placeholder="Search (Ctrl+K)"
           value={searchQuery}
@@ -399,54 +399,54 @@ export default function Contacts() {
      
       {viewMode === "cards" ? (
         filtered.length === 0 ? (
-          <div className="py-8 text-center text-sm text-slate-600 dark:text-slate-400">Search is not found</div>
+          <div className="py-8 text-center text-sm text-slate-600">Search is not found</div>
         ) : (
           <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
             {filtered.map((c) => (
-              <div key={c.id} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+              <div key={c.id} className="rounded-xl border card-surface p-4 shadow-sm">
                 <div className="mb-2 flex items-start justify-between gap-2">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-200 font-bold text-slate-700 dark:bg-slate-700 dark:text-slate-200">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-200 font-bold text-slate-700">
                       {getInitials(c.name)}
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{c.name}</div>
-                      <div className="text-sm text-slate-600 dark:text-slate-300">{c.company}</div>
+                      <div className="text-sm font-bold text-slate-900">{c.name}</div>
+                      <div className="text-sm text-slate-600">{c.company}</div>
                     </div>
                   </div>
                   <div className="flex gap-1">
                     <button
                       onClick={() => openEdit(c)}
                       title="Edit"
-                      className="rounded-lg p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      className="rounded-lg p-1.5 hover:bg-slate-100"
                     >
                       <img src="/edit.png" className="h-5 w-5" />
                     </button>
                     <button
                       onClick={() => askDelete(c.id)}
                       title="Delete"
-                      className="rounded-lg border p-1.5 hover:bg-slate-50 dark:border-slate-600 dark:hover:bg-slate-700"
+                      className="rounded-lg border p-1.5 hover:bg-slate-50"
                     >
                       <img src="/Frame.png" className="h-5 w-5" />
                     </button>
                   </div>
                 </div>
 
-                <div className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+                <div className="mt-2 text-sm text-slate-700">
                   <div className="mt-2 flex items-center gap-2">
                     <img className="h-5 w-5" src="/email.png" />
-                    <a className="text-blue-600 dark:text-blue-400" href={`mailto:${c.email}`}>
+                    <a className="text-blue-600" href={`mailto:${c.email}`}>
                       {c.email}
                     </a>
                   </div>
                   <div className="mt-2 flex items-center gap-2">
                     <img className="h-5 w-5" src="/phone.png" />
-                    <a className="text-slate-700 dark:text-slate-300" href={`tel:${c.phone}`}>
+                    <a className="text-slate-700" href={`tel:${c.phone}`}>
                       {c.phone}
                     </a>
                   </div>
-                  <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">{c.notes}</div>
-                  <div className="mt-3 text-xs text-slate-400 dark:text-slate-500">
+                  <div className="mt-2 text-xs text-slate-500">{c.notes}</div>
+                  <div className="mt-3 text-xs text-slate-400">
                     Added: <img className="mr-1 inline h-4 w-4" src="/calender.png" /> {c.createdAt}
                   </div>
                 </div>
@@ -455,24 +455,24 @@ export default function Contacts() {
           </div>
         )
       ) : (
-        <div className="rounded-xl bg-white p-3 shadow-sm dark:bg-slate-800">
+        <div className="rounded-xl bg-white p-3 shadow-sm table-surface">
           {filtered.length === 0 ? (
-            <div className="py-8 text-center text-sm text-slate-600 dark:text-slate-400">Search Is Not Found 🤷‍♀️</div>
+            <div className="py-8 text-center text-sm text-slate-600">Search Is Not Found 🤷‍♀️</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full border-separate border-spacing-0">
                 <thead>
-                  <tr className="bg-slate-100 dark:bg-slate-900">
+                  <tr className="bg-slate-100 table-head-row">
                     {["Name", "Company", "Email", "Phone", "Notes", "Added", "Actions"].map((h) => (
-                      <th key={h} className="px-3 py-2 text-left font-bold text-slate-900 dark:text-slate-100">
+                      <th key={h} className="px-3 py-2 text-left font-bold text-slate-900">
                         {h}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="dark:text-slate-300">
+                <tbody>
                   {filtered.map((c) => (
-                    <tr key={c.id} className="border-t border-slate-200 odd:bg-white even:bg-slate-50 dark:border-slate-700 dark:odd:bg-slate-800 dark:even:bg-slate-900/50">
+                    <tr key={c.id} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
                       <td className="px-3 py-2">{c.name}</td>
                       <td className="px-3 py-2">{c.company}</td>
                       <td className="px-3 py-2">{c.email}</td>
@@ -483,7 +483,7 @@ export default function Contacts() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => openEdit(c)}
-                            className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-slate-900 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+                            className="rounded-lg border bg-white px-3 py-1.5 text-slate-900 hover:bg-slate-50"
                           >
                             Edit
                           </button>

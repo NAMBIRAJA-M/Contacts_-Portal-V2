@@ -36,7 +36,7 @@ navigate("/soon")
     return(
         <>
          <div
-      className={`sticky top-0 left-0 z-[1002] h-[690px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.25)] text-slate-900 rounded-[15px] flex flex-col flex-shrink-0 overflow-hidden mr-3 mt-4 transition-all duration-300 dark:bg-gray-950 dark:text-slate-100 dark:border-r dark:border-slate-800 ${
+      className={`sticky top-0 left-0 z-[1002] h-[690px] sidebar-surface text-slate-900 rounded-[15px] flex flex-col flex-shrink-0 overflow-hidden mr-3 mt-4 transition-all duration-300 ${
         collapsed ? "w-[78px] max-w-[78px] pt-3" : "w-[280px] max-w-[340px] pt-6 mb-2 ml-2"
       }`}
     >
@@ -56,7 +56,7 @@ navigate("/soon")
           src="https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg"
           alt="logo"
         />
-        {!collapsed && <p className="text-slate-900 dark:text-slate-100 text-[1.4rem] font-semibold">Contactly</p>}
+        {!collapsed && <p className="text-[1.4rem] font-semibold sidebar-text">Contactly</p>}
       </div>
 
  
@@ -67,7 +67,7 @@ navigate("/soon")
             className={`flex items-center gap-2 p-2 rounded cursor-pointer transition-colors duration-200 font-semibold ${
               active === index
                 ? "bg-[#6E8CFB] text-white"
-                : "text-slate-900 dark:text-slate-100 hover:bg-gray-200 dark:hover:bg-gray-800"
+                : "sidebar-item"
             } ${collapsed ? "justify-center" : "justify-start"}`}
             onClick={() => handleClick(index)}
           >
@@ -80,7 +80,7 @@ navigate("/soon")
       
       <div className="flex justify-center items-center mb-4 mt-auto px-2">
         <p
-          className="flex items-center gap-1 cursor-pointer text-slate-700 dark:text-slate-300 hover:font-semibold hover:text-slate-900 dark:hover:text-slate-100"
+          className="flex items-center gap-1 cursor-pointer sidebar-muted hover:font-semibold hover:sidebar-text"
           onClick={handleLogout}
         >
           <LogoutIcon />

@@ -116,10 +116,17 @@ export default function Auth({ mode, onClose, onChange }: AuthProps) {
           >
             {isLogin ? "Log in" : "Create account"}
           </button>
+
+          <p className="w-full text-center font-semibold">Or</p>
           <a
             href="http://localhost:3000/auth/google"
-            className="rounded-lg border px-4 py-2"
+            className="flex  ml-[7rem] items-center w-[250px] gap-5 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-500 shadow-sm transition hover:bg-slate-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400/40 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
           >
+            <img
+              src="https://ik.imagekit.io/mc/Icons/Google__G__logo.svg.webp?updatedAt=1745926833613"
+              alt="Google"
+              className="h-5 w-5"
+            />
             Continue with Google
           </a>
 

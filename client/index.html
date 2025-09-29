@@ -12,13 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>contact-portal-v2</title>
     <script>
-
   (function () {
-    const saved = localStorage.getItem("theme");
-    const isDark = saved === "dark";
-    if (isDark) document.documentElement.classList.add("dark");
+    try {
+      var saved = localStorage.getItem("theme");
+      var isDark = saved === "dark";
+      document.documentElement.classList.toggle("theme-dark", !!isDark);
+    } catch (e) {
+      document.documentElement.classList.remove("theme-dark");
+    }
   })();
-</script>
+  </script>
 
   </head>
   <body>

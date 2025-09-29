@@ -29,11 +29,9 @@ function CustomTooltip({
   if (active && payload && payload.length) {
     const p = payload[0];
     return (
-      <div className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm shadow dark:bg-slate-900 dark:border-slate-700">
-        <div className="font-medium text-gray-800 dark:text-slate-100">{p.name}</div>
-        <div className="text-gray-600 dark:text-slate-300">
-          Contacts: <span className="font-semibold">{p.value}</span>
-        </div>
+      <div className="rounded-lg border card-surface px-3 py-2 text-sm shadow">
+        <div className="font-medium card-heading">{p.name}</div>
+        <div className="card-muted">Contacts: <span className="font-semibold">{p.value}</span></div>
       </div>
     );
   }
@@ -59,8 +57,8 @@ export default function ContactsPieChart({
   };
 
   return (
-    <div className="w-full mt-6 ml-6 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md  duration-200 dark:bg-slate-800 dark:border-slate-700">
-      <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-slate-100">
+    <div className="w-full mt-6 ml-6 rounded-2xl border card-surface p-5 shadow-sm hover:shadow-md  duration-200">
+      <h2 className="mb-4 text-lg font-semibold card-heading">
         📊 Contacts by Category
       </h2>
       <div style={{ width: "100%", height }}>

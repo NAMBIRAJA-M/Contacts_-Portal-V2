@@ -1,10 +1,72 @@
 @import "tailwindcss";
 
+/* Remove Tailwind dark: usage; use custom class-based theming instead */
 @layer base {
   body {
-    @apply bg-white text-slate-900 dark:bg-gray-900 dark:text-slate-100;
+    @apply bg-white text-slate-900;
   }
 }
+
+/* Light defaults */
+.navbar-surface { background-color: #ffffff; }
+.navbar-separator { background-color: rgb(156 163 175); }
+.sidebar-surface { background-color: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+.sidebar-text { color: rgb(15 23 42); }
+.sidebar-item { color: rgb(15 23 42); }
+.sidebar-item:hover { background-color: rgb(229 231 235); }
+.sidebar-muted { color: rgb(71 85 105); }
+.card-surface { background-color: #ffffff; border-color: rgb(229 231 235); }
+.card-heading { color: rgb(31 41 55); }
+.card-value { color: rgb(17 24 39); }
+.card-muted { color: rgb(107 114 128); }
+.avatar-surface { background-color: #ffffff !important; border: 1px solid #e5e7eb; }
+.input-surface { background-color: #ffffff; color: #111827; border-color: #6b7280; }
+.theme-button { border: 1px solid #cbd5e1; background: #ffffff; color: #1f2937; padding: 0.5rem 0.75rem; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.theme-button:hover { background: #f8fafc; }
+
+/* Component helpers for charts/badges */
+.badge-muted { background-color: #f3f4f6; color: #6b7280; }
+.badge-indigo { background-color: #eef2ff; color: #4f46e5; }
+.notif-button { background: #ffffff; color: #0f172a; border-color: transparent; }
+.notif-button:hover { border-color: #6b7280; }
+
+/* Contacts page extras */
+.toolbar-surface { background-color: rgba(203,213,225,0.6); }
+.table-surface { background-color: #ffffff; }
+.welcome-gradient { background-image: linear-gradient(to right, #ffffff, #f3f4f6); border-color: #e5e7eb; }
+.welcome-avatar { border-color: #d1d5db; }
+.page-surface { background-color: #f1f5f9; }
+
+/* Dark theme overrides when html has .theme-dark */
+html.theme-dark body { background-color: #0f172a; color: #e2e8f0; }
+html.theme-dark .navbar-surface { background-color: #1f2937; }
+html.theme-dark .navbar-separator { background-color: #475569; }
+html.theme-dark .sidebar-surface { background-color: #0b1220; color: #e2e8f0; border-right: 1px solid #1f2937; }
+html.theme-dark .sidebar-text { color: #e2e8f0; }
+html.theme-dark .sidebar-item { color: #e2e8f0; }
+html.theme-dark .sidebar-item:hover { background-color: #1f2937; }
+html.theme-dark .sidebar-muted { color: #94a3b8; }
+html.theme-dark .card-surface { background-color: #0f172a; border-color: #334155; }
+html.theme-dark .card-heading { color: #e2e8f0; }
+html.theme-dark .card-value { color: #e2e8f0; }
+html.theme-dark .card-muted { color: #cbd5e1; }
+html.theme-dark .avatar-surface { background-color: #1f2937; }
+html.theme-dark .input-surface { background-color: #1f2937; color: #e2e8f0; border-color: #475569; }
+html.theme-dark .theme-button { border-color: #475569; background: #1f2937; color: #e2e8f0; }
+html.theme-dark .theme-button:hover { background: #334155; }
+html.theme-dark .toolbar-surface { background-color: rgba(30,41,59,0.6); }
+html.theme-dark .table-surface { background-color: #0f172a; }
+html.theme-dark .table-head-row { background-color: #111827; }
+html.theme-dark tbody tr { border-color: #334155; }
+html.theme-dark tbody tr.odd\:bg-white { background-color: #0f172a; }
+html.theme-dark tbody tr.even\:bg-slate-50 { background-color: #111827; }
+html.theme-dark td, html.theme-dark th { color: #e2e8f0; }
+html.theme-dark td { border-top-color: #334155; }
+html.theme-dark .welcome-gradient { background-image: linear-gradient(to right, #1f2937, #0f172a); border-color: #334155; }
+html.theme-dark .welcome-avatar { border-color: #475569; }
+html.theme-dark .page-surface { background-color: #0b1220; }
+html.theme-dark .notif-button { background: #1f2937; color: #e2e8f0; border-color: #334155; }
+html.theme-dark .notif-button:hover { border-color: #64748b; }
 
 ::-webkit-scrollbar {
   display: none;
