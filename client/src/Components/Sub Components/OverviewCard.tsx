@@ -22,17 +22,17 @@ function OverviewCard({
   };
 
   return (
-    <div className="flex flex-col justify-between bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 p-4 w-full sm:min-w-[180px] sm:max-w-[260px]">
+    <div className="flex flex-col justify-between card-surface border rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 p-4 w-full sm:min-w-[180px] sm:max-w-[260px]">
       <div className="flex items-center gap-3">
-        <div className="p-2 bg-gray-100 rounded-full flex items-center justify-center">
+        <div className="p-2 avatar-surface rounded-full flex items-center justify-center">
           <img src={src} alt={heading} className="w-8 h-8" />
         </div>
-        <h3 className="text-sm font-medium text-gray-800">{heading}</h3>
+        <h3 className="text-sm font-medium card-heading">{heading}</h3>
       </div>
 
       <div className="mt-3">
-        <p className="text-2xl font-semibold text-gray-900">{value}</p>
-        <p className="text-sm text-gray-500 mt-1">{description}</p>
+        <p className="text-2xl font-semibold card-value">{value}</p>
+        <p className="text-sm card-muted mt-1">{description}</p>
       </div>
 
       <div

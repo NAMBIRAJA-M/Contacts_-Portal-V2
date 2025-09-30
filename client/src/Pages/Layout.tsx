@@ -7,7 +7,7 @@ export default function Layout() {
     <div className="flex min-h-screen">
       {/* Sidebar */}
       <Sidebar />
-      <main className=" flex-1 p-5  bg-white  mb-[2rem]">
+      <main className=" flex-1 p-5  mb-[2rem]">
        
         <Outlet />
       </main>

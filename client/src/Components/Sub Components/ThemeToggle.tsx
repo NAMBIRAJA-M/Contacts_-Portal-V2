@@ -1,31 +1,14 @@
-import { useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
+import { useTheme } from "../../hooks/useTheme";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light"); 
-
- 
-  useEffect(() => {
-    const saved = (localStorage.getItem("theme") as Theme | null) ?? "light";
-    setTheme(saved);
-    document.documentElement.classList.toggle("dark", saved === "dark");
-  }, []);
-
-  const toggle = () => {
-    const next: Theme = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    localStorage.setItem("theme", next);
-    document.documentElement.classList.toggle("dark", next === "dark");
-  };
-
+  const { theme, toggleTheme } = useTheme();
   return (
     <button
       type="button"
-      onClick={toggle}
+      onClick={toggleTheme}
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
       title={theme === "dark" ? "Light mode" : "Dark mode"}
-      className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-800 shadow-sm hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+      className="inline-flex items-center gap-2 rounded-lg theme-button"
     >
       {theme === "dark" ? (
         // Sun icon (light)

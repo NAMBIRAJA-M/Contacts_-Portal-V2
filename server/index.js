@@ -8,13 +8,11 @@ import "dotenv/config";
 const app = express();
 const port = 3000;
 
-// CORS to allow your Vite dev server
 app.use(cors({
   origin: "http://localhost:5173",
   credentials: true,
 }));
 
-// Sessions (MemoryStore fine for dev)
 app.use(session({
   secret: process.env.SESSION_SECRET || "dev-secret",
   resave: false,
@@ -24,7 +22,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-/* ---------- Passport: Google ---------- */
+
 passport.use(new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -54,7 +52,6 @@ passport.use(new GoogleStrategy(
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((obj, done) => done(null, obj));
 
-/* ---------- Routes ---------- */
 app.get("/", (_req, res) => res.send("hello"));
 
 app.get("/auth/google",
@@ -68,27 +65,6 @@ app.get("/auth/google/callback",
     failureRedirect: "/" }),
   
 
-   /*  const FRONTEND_REDIRECT = "http://localhost:5173/dashboard";
-
-    res.setHeader("Content-Type", "text/html; charset=utf-8");
-    res.end(`<!doctype html><html><head><meta charset="utf-8"><title>Signing in…</title></head>
-<body><script>
-try {
-  var data = ${JSON.stringify(JSON.stringify({
-    isAuthenticated: true,
-    user: {
-      id: user.id, name: user.name, email: user.email, photo: user.photo, provider: user.provider
-    }
-  }))};
-  data = JSON.parse(data);
-  localStorage.setItem("isAuthenticated", "true");
-  localStorage.setItem("user", JSON.stringify(data.user));
-  sessionStorage.setItem("isAuthenticated", "true");
-  sessionStorage.setItem("user", JSON.stringify(data.user));
-} catch (e) {}
-window.location.replace("${FRONTEND_REDIRECT}");
-</script></body></html>`);
-  } */
 );
 
 app.get("/api/me", (req, res) => {
@@ -100,7 +76,7 @@ app.get("/api/me", (req, res) => {
 app.post("/auth/logout", (req, res) => {
   req.logout?.(() => {});
   req.session?.destroy?.(() => {});
-  res.sendStatus(204); // ✅ respond
+  res.sendStatus(204); 
 });
 
 app.listen(port, () => {

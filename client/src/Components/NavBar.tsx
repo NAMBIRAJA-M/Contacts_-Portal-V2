@@ -30,20 +30,20 @@ export default function NavBar({user}:any) {
   }
   return (
     <>
-      <div className="grid grid-cols-[auto_1fr_auto] items-center w-full h-14 bg-[#F4F9F9] mb-2 mt-[-0.5rem] rounded-lg px-3 sticky  z-50 shadow-md">
+      <div className="grid grid-cols-[auto_1fr_auto] items-center w-full h-14 navbar-surface mb-2 mt-[-0.5rem] rounded-lg px-3 sticky z-50 shadow-md">
         <Breadcrumb />
 
         <div className="flex items-center gap-2 justify-end">
           <SearchBar />
-          <div className="w-px h-10 bg-gray-400"></div>
+          <div className="w-px h-10 navbar-separator"></div>
           <ThemeToggle />
-          <div className="w-px h-10 bg-gray-400"></div>
+          <div className="w-px h-10 navbar-separator"></div>
           <Notifications
             count={notificationsCount}
             onClear={() => setNotificationsCount(0)}
           />
 
-          <div className="w-px h-10 bg-gray-400"></div>
+          <div className="w-px h-10 navbar-separator"></div>
 
           <ProfileMenu
             profileImage={user.profile}

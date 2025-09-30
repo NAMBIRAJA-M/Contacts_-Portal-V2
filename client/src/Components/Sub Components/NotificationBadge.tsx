@@ -6,7 +6,7 @@ export default function Notifications({ count, onClear }: { count: number; onCle
     <button
       aria-label="Notifications"
       onClick={onClear}
-      className="flex items-center cursor-pointer justify-center w-10 h-10 rounded-lg border border-transparent text-black hover:border-gray-500"
+      className="flex items-center cursor-pointer justify-center w-10 h-10 rounded-lg border notif-button"
     >
       <Badge color="error" badgeContent={count} overlap="circular">
         <NotificationsNoneIcon />
