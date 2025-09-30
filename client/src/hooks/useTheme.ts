@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 export function useTheme() {
-  // Initialize from saved preference if present; otherwise default to light
+
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem("theme") as Theme | null;
     return saved ?? "light";
